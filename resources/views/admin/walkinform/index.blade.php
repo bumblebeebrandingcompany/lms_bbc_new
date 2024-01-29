@@ -28,11 +28,8 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
-<<<<<<< HEAD
-=======
                             <th>Project</th>
                             <th>Campaign</th>
->>>>>>> 1434718 (live)
                             <th>Source</th>
                             <th>Actions</th>
                         </tr>
@@ -43,24 +40,6 @@
 
                                 <td width="10"></td>
 
-<<<<<<< HEAD
-                                @foreach ($walkin->leads as $lead)
-                                    <td> {{ $lead->ref_num ?? '' }}</td>
-                                    <td> {{ $walkin->name }}</td>
-                                    <td> {{ $walkin->email }}</td>
-                                    <td> {{ $walkin->phone }}</td>
-                                    <td> {{ $walkin->sources->name ?? '' }}</td>
-                                    <td>
-                                        <div class="d-flex justify-content-between flex-nowrap">
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <!-- Button to trigger the edit modal -->
-                                                    <a href="{{ route('admin.walkinform.show', $walkin->id) }}"
-                                                        class="btn btn-primary btn-sm">
-                                                        View
-                                                    </a>
-                                                </div>
-=======
                                 {{-- @foreach ($walkin as $lead)--}}
                                 <td>
                                     @foreach ($walkin->leads as $lead)
@@ -83,7 +62,6 @@
                                                     View
                                                 </a>
                                                 
->>>>>>> 1434718 (live)
                                             </div>
                                         </div> --}}
 

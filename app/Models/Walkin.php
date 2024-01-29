@@ -26,31 +26,18 @@ class Walkin extends Model
         'name',
         'email',
         'phone',
-<<<<<<< HEAD
-        'source_id'
-=======
+
         'source_id',
         'project_id',
         'campaign_id'
        
 
->>>>>>> 1434718 (live)
     ];
     public function leads()
 {
     return $this->hasMany(Lead::class);
 }
-<<<<<<< HEAD
 
-public function sources()
-{
-    return $this->belongsto(Source::class);
-}
-public function projectLeads()
-{
-    return $this->hasMany(Lead::class, 'project_id', 'id');
-}
-=======
     public function sources()
     {
         return $this->belongsTo(Source::class, 'source_id');
@@ -63,5 +50,4 @@ public function projectLeads()
     {
         return $this->belongsTo(Project::class, 'project_id');
     }
->>>>>>> 1434718 (live)
 }
