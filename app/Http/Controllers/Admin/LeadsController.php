@@ -306,7 +306,7 @@ class LeadsController extends Controller
 
     public function create()
     {
-        if (!(auth()->user()->is_superadmin || auth()->user()->is_channel_partner)) {
+        if (!(auth()->user()->is_superadmin || auth()->user()->is_channel_partner || auth()->user()->is_presales || auth()->user()->is_frontoffice || auth()->user()->is_admissionteam )) {
             abort(403, 'Unauthorized.');
         }
 
@@ -384,7 +384,7 @@ class LeadsController extends Controller
     }
     public function edit(Lead $lead)
     {
-        if (!auth()->user()->is_superadmin) {
+        if (!(auth()->user()->is_superadmin || auth()->user()->is_channel_partner || auth()->user()->is_presales || auth()->user()->is_frontoffice || auth()->user()->is_admissionteam )) {
             abort(403, 'Unauthorized.');
         }
 
@@ -500,7 +500,7 @@ class LeadsController extends Controller
 
     public function massDestroy(MassDestroyLeadRequest $request)
     {
-        if (!auth()->user()->is_superadmin) {
+        if (!(auth()->user()->is_superadmin || auth()->user()->is_channel_partner || auth()->user()->is_presales || auth()->user()->is_frontoffice || auth()->user()->is_admissionteam )) {
             abort(403, 'Unauthorized.');
         }
 
