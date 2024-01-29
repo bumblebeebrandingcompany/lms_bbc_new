@@ -22,7 +22,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $appends = ['is_superadmin', 'is_client','is_agency', 'is_channel_partner', 'is_channel_partner_manager','is_presales','is_admissionteam','is_frontoffice'];
+    protected $appends = ['is_superadmin', 'is_client', 'is_agency', 'is_channel_partner', 'is_channel_partner_manager'];
 
     public $table = 'users';
 
@@ -47,10 +47,8 @@ class User extends Authenticatable
         'Superadmin' => 'Superadmin',
         'Clients'     => 'Clients',
         'Agency'     => 'Agency',
-        'Frontoffice'=>'Frontoffice',
-        'Presales'=>'Presales',
-        'Admissionteam'=>'Admissionteam',
-
+        // 'ChannelPartner' => 'Channel Partner',
+        // 'ChannelPartnerManager' => 'Channel Partner Manager'
     ];
 
     /**
@@ -191,32 +189,5 @@ class User extends Authenticatable
     public function getIsChannelPartnerManagerAttribute()
     {
         return $this->user_type == 'ChannelPartnerManager';
-    }
-     /**
-     * is user Presales?
-     *
-     * @return boolean
-     */
-    public function getIsPresalesAttribute()
-    {
-        return $this->user_type == 'Presales';
-    }
-     /**
-     * is user Admissionteam?
-     *
-     * @return boolean
-     */
-    public function getIsAdmissionteamAttribute()
-    {
-        return $this->user_type == 'Admissionteam';
-    }
-       /**
-     * is user Frontoffice?
-     *
-     * @return boolean
-     */
-    public function getIsFrontofficeAttribute()
-    {
-        return $this->user_type == 'Frontoffice';
     }
 }

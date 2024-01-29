@@ -13,7 +13,7 @@ class SitevisitRequest extends FormRequest
 {
     public function authorize()
     {
-        return auth()->user()->is_superadmin || auth()->user()->is_frontoffice || auth()->user()->is_client;
+        return auth()->user()->is_superadmin || auth()->user()->is_channel_partner;
     }
     public function rules()
     {

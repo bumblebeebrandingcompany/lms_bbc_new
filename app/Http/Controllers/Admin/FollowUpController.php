@@ -4,9 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Exports\LeadsExport;
 use App\Http\Controllers\Controller;
-
-use App\Http\Requests\MassDestroyFollowupRequest;
-
+use App\Http\Requests\MassDestroyLeadRequest;
 use App\Http\Requests\StoreFollowupRequest;
 use App\Http\Requests\UpdateLeadRequest;
 use App\Models\Campaign;
@@ -52,7 +50,6 @@ class FollowUpController extends Controller
 
         $lead = Lead::all();
         $agencies = User::all();
-
         $campaigns = Campaign::all();
         $followUps = Followup::all();
         $itemsPerPage = request('perPage', 10);
@@ -78,9 +75,10 @@ class FollowUpController extends Controller
         // Check if the lead is not null before proceeding
         if ($lead) {
             $parentStageId = $request->input('parent_stage_id');
+
             $followup = new Followup();
             $followup->lead_id = $lead->id;
-            $followup->user_id = $input['user_id']?? '';
+            $followup->user_id = $input['user_id'];
             $followup->follow_up_date = $input['follow_up_date'];
             $followup->follow_up_time = $input['follow_up_time'];
             $followup->notes = $input['notes'];
@@ -108,5 +106,4 @@ class FollowUpController extends Controller
 
         return back();
     }
-
 }

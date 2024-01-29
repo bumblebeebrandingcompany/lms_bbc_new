@@ -38,34 +38,25 @@ class NoteController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'note_text'=>'required',
-            'lead_id' => 'required',
 
+            'note_text' => 'nullable',
+            'lead_id' => 'required',
+            // 'note_content'=>'nullable'
         ]);
 
         $lead = Lead::find($request->lead_id);
 
         // Create a new note record in your database
         $note = new Note();
-
-        // Set the note_text based on the dropdown selection
-        $noteText = $request->input('note_text');
-        $noteContent = $request->input('note_content');
-
-        // Debugging statements
-
+        $note->id = $request->id;
+        $note->note_text = $request->note_text;
         $note->lead_id = $lead->id;
-
-        // $note->note_content = $request->note_content; // Save the selected option or "Others"
+        // $note->note_content=$request->note_content;
         $note->save();
-
-        // Log the timeline event
-        $note->logTimeline($lead->id, 'Note added', 'note_added');
+        $note->logTimeline($lead->id,'Note added','note_added');
 
         return redirect()->back()->with('success', 'Form submitted successfully!');
     }
-
-
 
 }
 

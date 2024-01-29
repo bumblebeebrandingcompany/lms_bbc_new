@@ -54,7 +54,6 @@ class Lead extends Model
         'lead_details' => 'array',
         'webhook_response' => 'array',
         'lead_event_webhook_response' => 'array',
-
     ];
 
 
@@ -88,6 +87,7 @@ class Lead extends Model
         return $this->hasMany(LeadEvents::class, 'lead_id');
     }
 
+
     public function parentStage()
     {
         return $this->belongsTo(ParentStage::class, 'parent_stage_id');
@@ -98,20 +98,10 @@ class Lead extends Model
         return $this->belongsTo(Stage::class, 'stage_id');
     }
 
-    public function users()
-    {
-        return $this->belongsTo(User::class, 'user_id');
-    }
-
     public function siteVisit()
     {
         return $this->belongsTo(SiteVisit::class, 'sitevisit_id');
     }
-// Lead model
-public function walkin()
-{
-    return $this->belongsTo(Walkin::class);
-}
 
     // Define a method to get the parent_stage_name
     public function getParentStageNameAttribute()
@@ -196,5 +186,8 @@ public function walkin()
     {
         return $this->hasMany(LeadTimeline::class);
     }
+
+
+
 }
 

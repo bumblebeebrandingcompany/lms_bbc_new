@@ -76,6 +76,7 @@ class UsersController extends Controller
             $table->editColumn('email', function ($row) {
                 return $row->email ? $row->email : '';
             });
+
             $table->editColumn('user_type', function ($row) {
                 return $row->user_type ? (User::USER_TYPE_RADIO[$row->user_type] ?? '') : '';
             });
@@ -151,6 +152,7 @@ class UsersController extends Controller
         $user->save();
 
         // $user->roles()->sync($request->input('roles', []));
+
         return redirect()->route('admin.users.index');
     }
 
@@ -164,7 +166,7 @@ class UsersController extends Controller
 
         $agencies = Agency::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $user->load('roles', 'client', 'agency',);
+        $user->load('roles', 'client', 'agency');
 
         $projects = $this->util->getProjectDropdown(true);
 

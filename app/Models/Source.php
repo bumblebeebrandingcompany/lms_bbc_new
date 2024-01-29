@@ -22,7 +22,7 @@ class Source extends Model
         'updated_at',
         'deleted_at',
     ];
-
+    
     /**
      * The attributes that aren't mass assignable.
      *
@@ -45,4 +45,3 @@ class Source extends Model
         return $this->belongsTo(Campaign::class, 'campaign_id');
     }
 }
-

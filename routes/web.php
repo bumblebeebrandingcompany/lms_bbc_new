@@ -45,7 +45,7 @@ Route::resource('/notes', 'NoteController');
 Route::resource('/notenotinterested', 'NoteNotInterestedController');
 
 Route::resource('/followups', 'FollowUpController');
-Route::delete('followups/destroy', 'FollowUpController@massDestroy')->name('followups.massDestroy');
+
 Route::get('leads/{lead}/initiate-call', 'LeadsController@initiateCall')
 ->name('leads.initiateCall');
 
@@ -55,16 +55,11 @@ Route::put('/admin/sitevisits/{sitevisit}/cancel', 'SiteVisitController@cancelSi
     ->name('sitevisits.conducted');
     Route::put('/admin/sitevisits/{sitevisit}/notvisited', 'SiteVisitController@notVisited')
     ->name('sitevisits.notvisited');
-    Route::put('/admin/sitevisits/{sitevisit}/applicationpurchased', 'SiteVisitController@applicationpurchased')
-    ->name('sitevisits.applicationpurchased');
 Route::match(['post', 'put'], '/admin/sitevisits/{id}/reschedule', 'SiteVisitController@reschedule')->name('sitevisits.reschedule');
 // Route::put('sitevisit/{sitevisit}', 'SiteVisitController@update')->name('admin.sitevisit.update');
 
     //call record
     Route::resource('/callog', 'CallRecordController');
-
-    Route::resource('/walkinform', 'WalkinController');
-    Route::resource('/admission', 'AdmissionFollowUpController');
     // Users
     Route::get('users/{id}/edit-password', 'UsersController@editPassword')
         ->name('users.edit.password');
@@ -100,6 +95,9 @@ Route::match(['post', 'put'], '/admin/sitevisits/{id}/reschedule', 'SiteVisitCon
     Route::get('get-campaigns', 'CampaignController@getCampaigns')->name('get.campaigns');
     Route::delete('campaigns/destroy', 'CampaignController@massDestroy')->name('campaigns.massDestroy');
     Route::resource('campaigns', 'CampaignController');
+
+
+
     Route::resource('tags', "TagController");
 
     //Stages

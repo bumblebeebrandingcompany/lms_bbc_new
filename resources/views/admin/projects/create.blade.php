@@ -49,6 +49,7 @@
                                 {{ $entry }}</option>
                         @endforeach
                     </select>
+                    <br>
                     @if ($errors->has('client'))
                         <span class="text-danger">{{ $errors->first('client') }}</span>
                     @endif
@@ -72,7 +73,7 @@
                     @endif
                     <span class="help-block">{{ trans('cruds.project.fields.description_helper') }}</span>
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <div class="col-md-6">
                         <label for="essential_fields">{{ trans('cruds.project.fields.essential') }}</label>
                     </div>
@@ -99,8 +100,8 @@
                     </div>
                     <div class="row mb-2">
                         <div class="col-md-3">
-                            <label for="essential_fields"></label>
-                            <input type="hidden" name="essential_fields[1][name_data]" value="">
+                            <label for="essential_fields">Phone Number Of the Lead</label>
+                            <input type="hidden" name="essential_fields[1][name_data]" value="Phone Number Of the Lead">
                         </div>
                         <div class="col-md-3">
                             <input type="text" class="form-control" name="essential_fields[1][name_key]"
@@ -185,9 +186,11 @@
                     </div>
                     <div id="essential-fields-container">
                     </div>
-                </div>
+                </div> --}}
+
+
                 {{-- sales fields --}}
-                <div class="form-group">
+                {{-- <div class="form-group">
 
                     <div class="col-md-6">
                         <label for="sales_fields">{{ trans('cruds.project.fields.sales') }}</label>
@@ -258,11 +261,11 @@
                     </div>
                 </div>
                 <div id="sales-fields-container">
-                </div>
+                </div> --}}
 
 
                 {{-- system fields --}}
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <div class="col-md-6">
                         <label for="system_fields">{{ trans('cruds.project.fields.system') }}</label>
                     </div>
@@ -452,7 +455,7 @@
                     </div>
                     <div id="custom-fields-container">
                     </div>
-                </div>
+                </div> --}}
                 <div class="form-group text-end">
                     <input type="hidden" id="custom-fields-json" name="custom_fields_json" value="">
                     <button class="btn btn-danger" type="submit">

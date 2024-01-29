@@ -11,7 +11,7 @@ class SiteVisit extends Model
 
     use HasFactory;
 
-    protected $appends = ['is_superadmin', 'is_client', 'is_agency', ];
+    protected $appends = ['is_superadmin', 'is_client', 'is_agency', 'is_channel_partner', 'is_channel_partner_manager',];
 
     public $table = 'site_visits';
 
@@ -30,9 +30,7 @@ class SiteVisit extends Model
     ];
 
     protected $fillable = [
-        'parent_stage_id',
-        'user_id',
-        'notes'
+        'parent_stage_id'
     ];
     public function users()
     {
@@ -73,9 +71,5 @@ public function source()
 }    public function project()
 {
     return $this->belongsTo(Project::class, 'project_id');
-}
-public function parentStage()
-{
-    return $this->belongsTo(ParentStage::class, 'parent_stage_id');
 }
 }

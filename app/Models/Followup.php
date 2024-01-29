@@ -10,7 +10,7 @@ class Followup extends Model
 {
     use HasFactory;
 
-    protected $appends = ['is_superadmin', 'is_agency', 'is_channel_partner', 'is_channel_partner_manager','is_presales','is_frontoffice'];
+    protected $appends = ['is_superadmin', 'is_client', 'is_agency', 'is_channel_partner', 'is_channel_partner_manager',];
 
     public $table = 'follow_ups';
 
