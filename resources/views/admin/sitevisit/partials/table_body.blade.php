@@ -269,7 +269,7 @@
                             <br>
                             <select class="form-control select2 {{ $errors->has('client') ? 'is-invalid' : '' }}"
                                 name="user_id" id="user_id" required>
-                                @foreach ($client as $id => $clients)
+                                @foreach ($agencies as $id => $clients)
                                     @foreach ($clients->clientUsers as $user)
                                         @if ($user->user_type == 'Admissionteam')
                                             <option value="{{ $user->id }}"
