@@ -34,7 +34,7 @@ class SiteVisit extends Model
         'user_id',
         'notes'
     ];
-    public function users()
+    public function clientUsers()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
