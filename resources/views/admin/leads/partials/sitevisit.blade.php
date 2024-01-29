@@ -1,3 +1,4 @@
+@if (auth()->user()->is_superadmin|| auth()->user()->is_presales|| auth()->user()->is_frontoffice|| auth()->user()->is_client)
 <h2 class="card-title"> Lead ID: {{ $lead->id }}</h2>
 <br>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -353,3 +354,4 @@
         </table>
     </div>
 </div>
+@endif
