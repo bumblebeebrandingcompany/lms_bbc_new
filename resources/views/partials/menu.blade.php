@@ -324,7 +324,7 @@
                         </p>
                     </a>
                 </li>
-                @if (auth()->user()->is_client || auth()->user()->is_frontoffice)
+                @if (auth()->user()->is_client || auth()->user()->is_frontoffice || auth()->user()->is_superadmin)
 
                 <li class="nav-item">
                     <a href="{{ route('admin.walkinform.index') }}"
