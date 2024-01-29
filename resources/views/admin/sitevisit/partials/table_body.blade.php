@@ -219,7 +219,7 @@
     @elseif ($sitevisit->parent_stage_id != 11 && $sitevisit->parent_stage_id != 10 && $sitevisit->parent_stage_id != 19)
         <!-- Add this condition to hide "Cancel" button if the stage is conducted or 10 -->
         @php
-            $canCancel = !auth()->user()->is_client && $sitevisit->lead && $sitevisit->parent_stage_id != 20;
+            $canCancel = !auth()->user()->is_client &&!auth()->user()->is_frontoffice && $sitevisit->lead && $sitevisit->parent_stage_id != 20;
         @endphp
 
         @if ($canCancel)
