@@ -166,7 +166,7 @@
                 @endif
             @elseif (!auth()->user()->is_superadmin || !auth()->user()->is_presales && $sitevisit->lead && in_array($sitevisit->parent_stage_id, [26, 27, 20, 19]))
 
-            @elseif (!auth()->user()->is_superadmin || !auth()->user()->is_presales && $sitevisit->lead && $sitevisit->parent_stage_id != 11)
+            @elseif (!auth()->user()->is_superadmin && !auth()->user()->is_presales && $sitevisit->lead && $sitevisit->parent_stage_id != 11)
                 @if ($sitevisit->parent_stage_id != 12)
                     <!-- Add this condition to exclude Not Visited -->
                     <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
@@ -281,7 +281,7 @@
                 </div>
             @elseif (!auth()->user()->is_superadmin && $sitevisit->lead && in_array($sitevisit->parent_stage_id, [11, 26, 27, 20, 19]))
 
-            @elseif (!auth()->user()->is_superadmin && $sitevisit->lead && $sitevisit->parent_stage_id != 12)
+            @elseif (!auth()->user()->is_superadmin && !auth()->user()->is_presales && $sitevisit->lead && $sitevisit->parent_stage_id != 12)
                 <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
                     data-target="#notVisitedModel{{ $sitevisit->id }}">
                     Not Visited
