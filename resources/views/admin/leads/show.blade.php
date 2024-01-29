@@ -65,8 +65,8 @@
                                 Followup
                             </a>
                         </li>
-                        @if (auth()->user()->is_client || auth()->user()->is_frontoffice || auth()->user()->is_superadmin)
-                        <li class="nav-item">
+                        @if (auth()->user()->is_superadmin|| auth()->user()->is_presales|| auth()->user()->is_frontoffice|| auth()->user()->is_client)
+                         <li class="nav-item">
                             <a class="nav-link" id="lead-sitevisit-tab" data-toggle="tab" href="#lead-sitevisit"
                                 role="tab" aria-controls="lead-sitevisit" aria-selected="false">
                                 <i class="fas fa-map-marker"></i>
