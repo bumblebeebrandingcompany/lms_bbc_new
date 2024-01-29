@@ -9,7 +9,6 @@
             <th>Follow-Up Time</th>
             <th>Follow-Up Date</th>
 
-            <th>Follow-Up By</th>
 <th>Notes</th>
 <th>Created at</th>
         </tr>
@@ -21,9 +20,7 @@
                 <td>{{ $followUp->follow_up_time }}</td>
                 <td>{{ $followUp->follow_up_date }}</td>
 
-                <td>
-                    {{ $followUp->users->representative_name }}
-                </td>
+
                 <td>{{ $followUp->notes }}</td>
                 <td>{{ $followUp->created_at }}</td>
 
