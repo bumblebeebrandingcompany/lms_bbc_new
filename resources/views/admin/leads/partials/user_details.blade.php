@@ -837,7 +837,7 @@
 
                                 <div class="modal-body">
                                     <input type="hidden" name="lead_id" value="{{ $lead->id }}">
-                                    <input type="hidden" name="parent_stage_id" value="25">
+                                    <input type="hidden" name="parent_stage_id" value="28">
                                     {{-- <div class="form-group">
                                         <label type="select" for="user_id">clients</label>
                                         <select name="user_id" id="user_id"
