@@ -56,7 +56,6 @@
                         <th>Campaign Name</th>
                         <th>Follow-Up Date</th>
                         <th>Follow-Up Time</th>
-                        <th>Follow-Up By</th>
                         <th>Notes</th>
                         <th>Created At</th>
                     </tr>
@@ -65,7 +64,7 @@
                     @php
                     $counter = 1;
                 @endphp
-          @foreach ($followUps->where('parent_stage_id', 25) as $followUp)
+          @foreach ($followUps->where('parent_stage_id', 28) as $followUp)
 
                         <tr data-created-at="{{ $followUp->follow_up_date}}">
                             <td>{{ $counter++ }}</td>
@@ -96,9 +95,7 @@
                             <td>
                                 {{ $followUp->follow_up_time }}
                             </td>
-                            <td>
-                                {{ $followUp->users->representative_name }}
-                            </td>
+
                             <td>
                                 @foreach ($lead as $leads)
                                     @if ($leads->id === $followUp->lead_id)
