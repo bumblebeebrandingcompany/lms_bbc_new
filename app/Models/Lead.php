@@ -107,6 +107,11 @@ class Lead extends Model
     {
         return $this->belongsTo(SiteVisit::class, 'sitevisit_id');
     }
+// Lead model
+public function walkin()
+{
+    return $this->belongsTo(Walkin::class);
+}
 
     // Define a method to get the parent_stage_name
     public function getParentStageNameAttribute()

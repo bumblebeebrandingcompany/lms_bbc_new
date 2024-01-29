@@ -28,6 +28,11 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
+<<<<<<< HEAD
+=======
+                            <th>Project</th>
+                            <th>Campaign</th>
+>>>>>>> 1434718 (live)
                             <th>Source</th>
                             <th>Actions</th>
                         </tr>
@@ -38,6 +43,7 @@
 
                                 <td width="10"></td>
 
+<<<<<<< HEAD
                                 @foreach ($walkin->leads as $lead)
                                     <td> {{ $lead->ref_num ?? '' }}</td>
                                     <td> {{ $walkin->name }}</td>
@@ -54,30 +60,81 @@
                                                         View
                                                     </a>
                                                 </div>
+=======
+                                {{-- @foreach ($walkin as $lead)--}}
+                                <td>
+                                    @foreach ($walkin->leads as $lead)
+                                        {{ $lead->ref_num ?? '' }}
+                                    @endforeach
+                                </td> 
+                                <td> {{ $walkin->name }}</td>
+                                <td> {{ $walkin->email }}</td>
+                                <td> {{ $walkin->phone }}</td>
+                                <td> {{ $walkin->projects->name ?? '' }}</td>
+                                <td> {{ $walkin->campaigns->campaign_name ?? '' }}</td>
+                                <td> {{ $walkin->sources->name ?? '' }}</td>
+                               
+                                <td>
+                                    <div class="d-flex justify-content-between flex-nowrap">
+                                        {{-- <div class="col-md-4">
+                                            <div class="form-group">
+                                                <!-- Button to trigger the edit modal -->
+                                                <a href="{{ route('admin.walkinform.show', $walkin->id) }}" class="btn btn-primary btn-sm">
+                                                    View
+                                                </a>
+                                                
+>>>>>>> 1434718 (live)
                                             </div>
+                                        </div> --}}
 
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <!-- Button to trigger the edit modal -->
-                                                    <a href="{{ route('admin.walkinform.edit', $walkin->id) }}"
-                                                        class="btn btn-info btn-sm">
-                                                        Edit
-                                                    </a>
-                                                </div>
+                                    {{--     <div class="col-md-4">
+                                            <div class="form-group">
+                                                <!-- Button to trigger the edit modal -->
+                                                <a href="{{ route('admin.walkinform.edit', $walkin->id) }}"
+                                                    class="btn btn-info btn-sm">
+                                                    Edit
+                                                </a>
                                             </div>
+                                        </div> --}}
 
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <!-- Button to trigger the delete modal -->
-                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
-                                                        data-target="#deleteModal{{ $walkin->id }}">
-                                                        Delete
-                                                    </button>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <!-- Button to trigger the delete modal -->
+                                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal">
+                                                    Delete
+                                                </button>
+                                        
+                                                <!-- Delete Confirmation Modal -->
+                                                <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                Are you sure you want to delete this item?
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                                <!-- Form to handle the actual deletion -->
+                                                                <form action="{{ route('admin.walkinform.destroy', $walkin->id) }}" method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </td>
-                                @endforeach
+                                        
+                                    </div>
+                                </td>
+                                {{-- @endforeach --}}
                             </tr>
                         @endforeach
                     </tbody>

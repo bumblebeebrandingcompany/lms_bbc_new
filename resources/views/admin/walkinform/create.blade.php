@@ -35,6 +35,7 @@
                             <input type="text" name="additional_email" class="form-control">
                         </div>
 
+<<<<<<< HEAD
                         {{-- <div class="form-group">
                             <label class="required" for="project_id">Referred By</label>
                             <br>
@@ -61,6 +62,9 @@
                                 @endforeach
                             @endforeach
                         </select> --}}
+=======
+
+>>>>>>> 1434718 (live)
                         <div class="form-group">
                             <label for="channelPartner" class="required">Remarks:</label>
 
@@ -68,6 +72,7 @@
                         </div>
                         <input type="hidden" name="comments" class="form-control" value= "Direct Walk-in attended"
                             required>
+<<<<<<< HEAD
                             @if(!(auth()->user()->is_agency || auth()->user()->is_channel_partner || auth()->user()->is_channel_partner_manager))
                             <div class="col-md-3">
                                 <label for="source_id">
@@ -104,6 +109,44 @@
                             </div>
                             <br>
                         @endif
+=======
+                        <div class="col-md-3">
+                            <label for="source_id">
+                                Projects
+                            </label>
+                        </div>
+                        <div class="col-md-12">
+                            <select class="select2" name="project_id">
+                                @foreach ($projects as $project)
+                                    <option value="{{ $project->id }}">{{ $project->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-md-12 campaigns_div">
+                            <label for="campaign_id">
+                                @lang('messages.campaigns')
+                            </label>
+                            <select class="search form-control" id="campaign_id" name="campaign_id">
+                                @foreach ($campaigns as $key => $item)
+                                    <option value="{{ $item->id }}" @if (isset($filters['campaign_id']) && $filters['campaign_id'] == $item->id) selected @endif>
+                                        {{ $item->campaign_name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-md-12 sources_div">
+                            <label for="source_id">
+                                Source
+                            </label>
+                            <select class="search form-control" name="source_id" id="source_id">
+
+                                @foreach ($sources as $source)
+                                    <option value="{{ $source->id }}" @if (isset($filters['source']) && $filters['source'] == $item->id) selected @endif>
+                                        {{ $source->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <br>
+>>>>>>> 1434718 (live)
                         <button type="submit" class="btn btn-success">Create Walkin</button>
                     </form>
                 </div>

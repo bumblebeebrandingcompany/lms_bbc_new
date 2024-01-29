@@ -20,15 +20,15 @@
                     <div class="form-group">
                         <table class="table table-bordered table-striped">
                             <tbody>
-                                @foreach ($walkin->leads as $lead)
-                                <tr>
+                           
+                                {{-- <tr>
                                         <th>
                                           Ref Num
                                         </th>
 
                                         <td> {{ $walkin->ref_num }}</td>
                                     </tr>
-                                    <tr>
+                                    <tr> --}}
                                     <th>
                                         {{ trans('cruds.client.fields.name') }}
                                     </th>
@@ -41,7 +41,7 @@
                                         Email
                                     </th>
                                     <td>
-                                        {{ $walkin->email }}
+                                        {{ $walkin->email ?? ''}}
                                     </td>
                                 </tr>
 
@@ -50,17 +50,16 @@
                                         Phone
                                     </th>
                                     <td class="word-break">
-                                        {{ $walkin->phone }}
+                                        {{ $walkin->phone ?? ''}}
                                     </td>
                                 </tr>
                                <th>
                                         Referred By
                                     </th>
                                     <td>
-                                        {{ $walkin->referred_by }}
+                                        {{ $walkin->referred_by ?? ''}}
                                     </td>
                                 </tr>
-@endforeach
                             </tbody>
                         </table>
                     </div>
