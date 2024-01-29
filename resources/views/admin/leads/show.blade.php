@@ -65,6 +65,7 @@
                                 Followup
                             </a>
                         </li>
+                        @if (auth()->user()->is_client || auth()->user()->is_frontoffice || auth()->user()->is_superadmin)
                         <li class="nav-item">
                             <a class="nav-link" id="lead-sitevisit-tab" data-toggle="tab" href="#lead-sitevisit"
                                 role="tab" aria-controls="lead-sitevisit" aria-selected="false">
@@ -72,6 +73,7 @@
                                Site Visit
                             </a>
                         </li>
+                        @endif
                         <li class="nav-item">
                             <a class="nav-link" id="lead-call_logs-tab" data-toggle="tab" href="#lead-call_logs"
                                 role="tab" aria-controls="lead-call_logs" aria-selected="false">
