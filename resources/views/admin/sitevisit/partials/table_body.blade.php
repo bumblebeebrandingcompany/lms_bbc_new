@@ -72,7 +72,7 @@
                             <i class="fas fa-check-double" style="font-size:17px"></i>
                         </div>
                     @endif
-                @elseif (!auth()->user()->is_client || !auth()->user()->is_frontoffice && $sitevisit->lead && in_array($sitevisit->parent_stage_id, [11, 20, 27, 10 ,12]))
+                @elseif (!auth()->user()->is_client || !auth()->user()->is_frontoffice && $sitevisit->lead && in_array($sitevisit->parent_stage_id, [11, 20, 27, 10]))
 
                 @elseif (!auth()->user()->is_client || !auth()->user()->is_frontoffice && $sitevisit->lead && $sitevisit->parent_stage_id != 20)
                     <button type="button" class="btn btn-sm btn-warning" data-toggle="modal"
