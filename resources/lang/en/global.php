@@ -189,6 +189,7 @@ return [
     'deleted_at'                     => 'Deleted at',
     'description'                    => 'Description',
     'deselect_all'                   => 'Deselect all',
+    'select_all'                     => 'Select all',
     'discount_amount'                => 'Discount amount',
     'discount_percent'               => 'Discount percent',
     'due_date'                       => 'Due date',
@@ -259,7 +260,7 @@ return [
     'sample_answer'                  => 'Sample answer',
     'sample_category'                => 'Sample category',
     'sample_question'                => 'Sample question',
-    'select_all'                     => '',
+
     'select_crud_placeholder'        => 'Please select one of your CRUDs',
     'select_dt_placeholder'          => 'Please select one of date/time fields',
     'select_users_placeholder'       => 'Please select one of your Users',
